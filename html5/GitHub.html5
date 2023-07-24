@@ -85,6 +85,7 @@ $-- by the CSS file in the finalized template:
   </style>
 $-------------------------------------------------------------------------------
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">img{display: block; margin-left: auto; margin-right: auto;}</style>
 $-------------------------------------------------------------------------------
 $if(quotes)$
   <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
@@ -162,5 +163,18 @@ $include-after$
 $endfor$
 $-------------------------------------------------------------------------------
 </article>
+
+$if(analytics)$
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=$analytics$"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '$analytics$');
+</script>
+$endif$
+
 </body>
 </html>
